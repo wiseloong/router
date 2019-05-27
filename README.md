@@ -101,6 +101,7 @@ wiseloong-前端-路由
 [:a {:href (wr/path-for app-routes home)} "items homed"]
 =>
 "#/"
+
 [:a {:href (wr/path-for app-routes :item {:item-id "xxxx"} {:abc "mmmm" :bcd ["1" "2"]})} "item xxxx query"]]]
 =>
 "#/items/item-xxxx?abc=mmmm&bcd=1&bcd=2"

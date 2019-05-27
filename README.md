@@ -75,7 +75,7 @@ wiseloong-前端-路由
   (r/render [main] (.getElementById js/document "app")))
 ```
 
-> start-router!支持接收多个配置，方便开发独立页面组件，比如登陆页面；结果：把后面的配置app-routes-a放到第一个配置app-routes里的第二个元素里的倒数第二的位置，例如：
+> start-router!支持接收多个配置，方便开发集成独立页面组件，比如登陆页面；结果：把后面的配置app-routes-a放到第一个配置app-routes里的第二个元素里的倒数第二的位置，例如：
 
 ```clojure
 (def app-routes-a

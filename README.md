@@ -75,16 +75,18 @@ wiseloong-前端-路由
   (r/render [main] (.getElementById js/document "app")))
 ```
 
-start-router!支持接收多个配置，把后面的配置app-routes-a第一个app-routes里的第二个元素里的倒数第二的位置，例如：
+> start-router!支持接收多个配置，把后面的配置app-routes-a放到第一个配置app-routes里的第二个元素里的倒数第二的位置，例如：
 
 ```clojure
 (def app-routes-a
   ["about-a" {""               :index
               "/about"         :about}])
+              
 (defn ^:export init []
   (wr/start-router! app-routes app-routes-a app-routes-b)
   (r/render [main] (.getElementById js/document "app")))
-=>
+
+;; 合并后的结果（忽略app-routes-b）
 ["/" [["" home]
       ["items" {""                  :items
                 ["/item-" :item-id] :item}]

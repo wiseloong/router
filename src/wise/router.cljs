@@ -41,7 +41,7 @@
 (defmulti page-contents (fn [_ x] x))
 
 (defn path-to "跳转url，可用于按钮的点击事件"
-  [url] (set! (.-href js/location) url))
+  [url] (set! (.-href js/location) (str "#/" url)))
 
 (defn path-for "获取url地址"
   ([route handler]

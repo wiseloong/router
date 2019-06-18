@@ -6,7 +6,9 @@ wiseloong-前端-路由
 #### 软件架构
 在bidi基础上升级，支持query-params。
 
-`[wiseloong/router "0.1.0-SNAPSHOT"]`，使用前需要`lein install`
+公共使用：`[wiseloong/router "1.0.2"]`
+
+自己编译：`[wiseloong/router "0.1.0-SNAPSHOT"]`，使用前需要`lein install`
 
 
 #### 使用教程
@@ -107,11 +109,15 @@ wiseloong-前端-路由
 "#/items/item-xxxx?abc=mmmm&bcd=1&bcd=2"
 ```
 
+> 不太推荐这种，还不如直接写地址呢，省的还要带上app-routes了；地址前面需要加上`#/`，例如：`#/about`
+
 6. 跳转网页：path-to
 
 ```clojure
-[:button {:on-click (wr/path-to "#/items/item-xxxx?abc=mmmm&bcd=1&bcd=2")}]
+[:button {:on-click (wr/path-to "items/item-xxxx?abc=mmmm&bcd=1&bcd=2")}]
 ```
+
+> 自动给地址添加`#/`前缀。
 
 #### 使用说明
 
